@@ -6,10 +6,20 @@ const ImageItem = props => {
     clickWeapon(details)
   }
 
+  let compiler
+
+  if (id === 'ROCK') {
+    compiler = 'rockButton'
+  } else if (id === 'PAPER') {
+    compiler = 'paperButton'
+  } else if (id === 'SCISSORS') {
+    compiler = 'scissorsButton'
+  }
+
   return (
     <li className="card">
       <button type="button" onClick={onClickEmojiCard}>
-        <img src={imageUrl} alt={id} />
+        <img src={imageUrl} alt={id} data-testid={compiler} />
       </button>
     </li>
   )

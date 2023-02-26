@@ -30,25 +30,25 @@ class MainCard extends Component {
     const opponentId = opponentWeapon.id
     let status = ''
 
-    if (playerId === opponentId) status = 'Draw'
+    if (playerId === opponentId) status = 'IT IS DRAW'
     else if (playerId !== opponentId) {
       if (playerId === 'ROCK') {
         if (opponentId === 'PAPER') {
-          status = 'You Loose'
+          status = 'YOU LOSE'
         } else {
-          status = 'You Won'
+          status = 'YOU WON'
         }
       } else if (playerId === 'PAPER') {
         if (opponentId === 'ROCK') {
-          status = 'You Won'
+          status = 'YOU WON'
         } else {
-          status = 'You Loose'
+          status = 'YOU LOSE'
         }
       } else if (playerId === 'SCISSORS') {
         if (opponentWeapon === 'PAPER') {
-          status = 'You Won'
+          status = 'YOU WON'
         } else {
-          status = 'You Loose'
+          status = 'YOU LOSE'
         }
       }
     }

@@ -9,8 +9,14 @@ const WinOrLooseCard = props => {
 
   return (
     <div>
-      <img src={playerWeapon.imageUrl} alt="player" className="img" />
-      <img src={opponentWeapon.imageUrl} alt="opponent" className="img" />
+      <h1>YOU</h1>
+      <img src={playerWeapon.imageUrl} alt="your choice" className="img" />
+      <h1>OPPONENT</h1>
+      <img
+        src={opponentWeapon.imageUrl}
+        alt="opponent choice"
+        className="img"
+      />
       <p>{status}</p>
       <button type="button" onClick={onClickPlayAgain}>
         PLAY AGAIN
