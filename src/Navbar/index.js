@@ -1,6 +1,5 @@
 const NavBar = props => {
   const {gameScore} = props
-  console.log(gameScore)
   return (
     <div>
       <div>

@@ -10,21 +10,12 @@ class MainCard extends Component {
     isGameInProgress: true,
     score: 0,
     playerWeapon: '',
+    opponentWeapon: '',
+    status: '',
   }
 
-  clickWeapon = details => {
-    this.setState({isGameInProgress: false, playerWeapon: details})
-  }
-
-  playAgain = () => {
-    this.setState({isGameInProgress: true})
-  }
-
-  renderGameCard = () => {
-    const {choicesList} = this.props
-    const opponentWeapon = choicesList[Math.floor(Math.random() * 2)]
-
-    const {playerWeapon} = this.state
+  updateOpponent = () => {
+    const {playerWeapon, opponentWeapon} = this.state
 
     const playerId = playerWeapon.id
     const opponentId = opponentWeapon.id
@@ -45,14 +36,42 @@ class MainCard extends Component {
           status = 'YOU LOSE'
         }
       } else if (playerId === 'SCISSORS') {
-        if (opponentWeapon === 'PAPER') {
+        if (opponentId === 'PAPER') {
           status = 'YOU WON'
         } else {
           status = 'YOU LOSE'
         }
       }
     }
+    console.log(status, playerId, opponentId)
+    if (status === 'YOU WON') {
+      this.setState(ps => ({score: ps.score + 1}))
+    } else if (status === 'YOU LOSE') {
+      this.setState(ps => ({score: ps.score - 1}))
+    }
+    this.setState({status})
+    this.setState({isGameInProgress: false})
+  }
 
+  clickWeapon = details => {
+    const {choicesList} = this.props
+    const opponentWeapon1 =
+      choicesList[Math.floor(Math.random() * choicesList.length)]
+    this.setState(
+      {
+        playerWeapon: details,
+        opponentWeapon: opponentWeapon1,
+      },
+      this.updateOpponent,
+    )
+  }
+
+  playAgain = () => {
+    this.setState({isGameInProgress: true})
+  }
+
+  renderGameCard = () => {
+    const {playerWeapon, opponentWeapon, status} = this.state
     return (
       <WinOrLooseCard
         playerWeapon={playerWeapon}
