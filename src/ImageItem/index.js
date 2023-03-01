@@ -1,3 +1,5 @@
+import './index.css'
+
 const ImageItem = props => {
   const {details, clickWeapon} = props
   const {id, imageUrl} = details
@@ -18,8 +20,8 @@ const ImageItem = props => {
 
   return (
     <li className="card">
-      <button type="button" onClick={onClickEmojiCard}>
-        <img src={imageUrl} alt={id} data-testid={compiler} />
+      <button type="button" className="choose" onClick={onClickEmojiCard}>
+        <img className="image" src={imageUrl} alt={id} data-testid={compiler} />
       </button>
     </li>
   )

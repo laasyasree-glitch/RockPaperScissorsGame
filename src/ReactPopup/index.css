@@ -1,4 +1,4 @@
-img {
+.img {
   width: 60%;
 }
 .listItem {
@@ -18,9 +18,13 @@ img {
   font-size: 25px;
 }
 .trigger-button {
-  background-color: transparent;
-  border-radius: 5%;
+  background-color: #ffffff;
+  color: #223a5f;
+  align-self: center;
+  padding: 0.5%;
+  border-radius: 5px;
   text-align: center;
+  font-size: 20px;
 }
 @media screen and (max-width: 768px) {
   .icon {

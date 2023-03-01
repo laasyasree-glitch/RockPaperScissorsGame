@@ -1,13 +1,17 @@
+import './index.css'
+
 const NavBar = props => {
   const {gameScore} = props
   return (
-    <div>
+    <div className="Header">
       <div>
-        <h1>Rock Paper Scissors</h1>
+        <h1>Rock</h1>
+        <h1>Paper</h1>
+        <h1>Scissors</h1>
       </div>
-      <div>
+      <div className="score-board-container">
         <p>Score</p>
-        <p>{gameScore}</p>
+        <p className="score">{gameScore}</p>
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import ReactPopup from '../ReactPopup'
 import NavBar from '../Navbar'
 import ImageItem from '../ImageItem'
 import WinOrLooseCard from '../WinOrLooseCard'
-import {Container, MainContainer} from './styledComponent'
+import './index.css'
 
 class MainCard extends Component {
   state = {
@@ -85,7 +85,7 @@ class MainCard extends Component {
   renderChooseList = () => {
     const {choicesList} = this.props
     return (
-      <Container>
+      <div className="choose-container">
         {choicesList.map(eachItem => (
           <ImageItem
             details={eachItem}
@@ -93,18 +93,18 @@ class MainCard extends Component {
             clickWeapon={this.clickWeapon}
           />
         ))}
-      </Container>
+      </div>
     )
   }
 
   render() {
     const {isGameInProgress, score} = this.state
     return (
-      <MainContainer>
+      <div className="main-container">
         <NavBar gameScore={score} />
-        {isGameInProgress ? this.renderChooseList() : this.renderGameCard()}
         <ReactPopup />
-      </MainContainer>
+        {isGameInProgress ? this.renderChooseList() : this.renderGameCard()}
+      </div>
     )
   }
 }
