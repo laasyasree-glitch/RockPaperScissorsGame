@@ -1,3 +1,30 @@
-.img {
-  width: 20%;
+.game-img {
+  width: 30%;
+  align-self: center;
+}
+
+.container-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.cont-2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.status-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.status {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 800;
+  font-size: 25px;
 }

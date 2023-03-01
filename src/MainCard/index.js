@@ -73,12 +73,14 @@ class MainCard extends Component {
   renderGameCard = () => {
     const {playerWeapon, opponentWeapon, status} = this.state
     return (
-      <WinOrLooseCard
-        playerWeapon={playerWeapon}
-        opponentWeapon={opponentWeapon}
-        status={status}
-        playAgain={this.playAgain}
-      />
+      <div className="card">
+        <WinOrLooseCard
+          playerWeapon={playerWeapon}
+          opponentWeapon={opponentWeapon}
+          status={status}
+          playAgain={this.playAgain}
+        />
+      </div>
     )
   }
 
@@ -101,8 +103,9 @@ class MainCard extends Component {
     const {isGameInProgress, score} = this.state
     return (
       <div className="main-container">
-        <NavBar gameScore={score} />
         <ReactPopup />
+        <NavBar gameScore={score} />
+
         {isGameInProgress ? this.renderChooseList() : this.renderGameCard()}
       </div>
     )

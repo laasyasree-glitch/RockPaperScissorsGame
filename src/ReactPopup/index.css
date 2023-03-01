@@ -1,12 +1,7 @@
-.img {
-  width: 60%;
+.rules-img {
+  width: 100%;
 }
-.listItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 .closeButtonContainer {
   display: flex;
   justify-content: flex-end;
@@ -30,10 +25,6 @@
   .icon {
     font-size: 20px;
   }
-}
-
-.popup-content {
-  width: 70%;
 }
 
 .card {

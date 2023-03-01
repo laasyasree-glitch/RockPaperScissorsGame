@@ -15,7 +15,6 @@ const ReactPopup = () => (
             RULES
           </button>
         }
-        className="popup-content"
       >
         {close => (
           <div>
@@ -25,14 +24,15 @@ const ReactPopup = () => (
                 className="trigger-button"
                 onClick={() => close()}
               >
-                <IoMdClose class="icon" />
+                <IoMdClose className="icon" />
+                <span>close</span>
               </button>
             </div>
             <div className="card">
               <img
                 src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rules-image.png"
                 alt="rules"
-                className="img"
+                className="rules-img"
               />
             </div>
           </div>
